@@ -1,4 +1,4 @@
-![tree](./screen.png)
+![tree](screen.jpg)
 
 
 ## you can add tests in /tests/tests.json && /tests/rq_tests.json
