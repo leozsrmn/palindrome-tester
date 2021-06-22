@@ -1,0 +1,62 @@
+{
+  "test-1": {
+    "name": "PDF-1",
+    "arg": "-n 4782 -b 10",
+    "ans": "4782 leads to 46464 in 3 iteration(s) in base 10\n"
+  },
+  "test-2": {
+    "name": "PDF-2",
+    "arg": "-n 64 -b 2",
+    "ans": "64 leads to 65 in 1 iteration(s) in base 2\n"
+  },
+  "test-3": {
+    "name": "PDF-3",
+    "arg": "-n 4782 toto",
+    "ans": "invalid argument\n"
+  },
+  "test-4": {
+    "name": "PDF-4",
+    "arg": "-p 363 -b 10",
+    "ans": "3 leads to 363 in 6 iteration(s) in base 10\n6 leads to 363 in 5 iteration(s) in base 10\n12 leads to 363 in 4 iteration(s) in base 10\n15 leads to 363 in 3 iteration(s) in base 10\n21 leads to 363 in 4 iteration(s) in base 10\n24 leads to 363 in 3 iteration(s) in base 10\n30 leads to 363 in 4 iteration(s) in base 10\n33 leads to 363 in 3 iteration(s) in base 10\n39 leads to 363 in 2 iteration(s) in base 10\n42 leads to 363 in 3 iteration(s) in base 10\n48 leads to 363 in 2 iteration(s) in base 10\n51 leads to 363 in 3 iteration(s) in base 10\n57 leads to 363 in 2 iteration(s) in base 10\n60 leads to 363 in 3 iteration(s) in base 10\n66 leads to 363 in 2 iteration(s) in base 10\n75 leads to 363 in 2 iteration(s) in base 10\n84 leads to 363 in 2 iteration(s) in base 10\n93 leads to 363 in 2 iteration(s) in base 10\n132 leads to 363 in 1 iteration(s) in base 10\n231 leads to 363 in 1 iteration(s) in base 10\n330 leads to 363 in 1 iteration(s) in base 10\n363 leads to 363 in 0 iteration(s) in base 10\n"
+  },
+  "test-5": {
+    "name": "PDF-5",
+    "arg": "-p 363 -b 10 -imax 2",
+    "ans": "39 leads to 363 in 2 iteration(s) in base 10\n48 leads to 363 in 2 iteration(s) in base 10\n57 leads to 363 in 2 iteration(s) in base 10\n66 leads to 363 in 2 iteration(s) in base 10\n75 leads to 363 in 2 iteration(s) in base 10\n84 leads to 363 in 2 iteration(s) in base 10\n93 leads to 363 in 2 iteration(s) in base 10\n132 leads to 363 in 1 iteration(s) in base 10\n231 leads to 363 in 1 iteration(s) in base 10\n330 leads to 363 in 1 iteration(s) in base 10\n363 leads to 363 in 0 iteration(s) in base 10\n"
+  },
+   "test-6": {
+    "name": "PDF-6",
+    "arg": "-p 363 -b 10 -imin 6",
+    "ans": "3 leads to 363 in 6 iteration(s) in base 10\n"
+  },
+  "test-7": {
+    "name": "PDF-7",
+    "arg": "-p 363 -b 10 -imin 7",
+    "ans": "no solution\n"
+  },
+  "test-8": {
+    "name": "Invalid option: -low",
+    "arg": "-p 363 -b 10 -low 7",
+    "ans": "invalid argument\n"
+  },
+  "test-9": {
+    "name": "Option -p with -n",
+    "arg": "-p 12 -n 12",
+    "ans": "invalid argument\n"
+  },
+  "test-10": {
+    "name": "Option -p with -n",
+    "arg": "-p 12 -n 12",
+    "ans": "invalid argument\n"
+  },
+  "test-11": {
+    "name": "Invalid number",
+    "arg": "-n 1257a67",
+    "ans": "invalid argument\n"
+  },
+  "test-12": {
+    "name": "Negative number",
+    "arg": "-n -13",
+    "ans": "invalid argument\n"
+  }
+}
