@@ -1,1 +1,1 @@
-![tree](./screen.png)
+![tree](screen.jpg)
