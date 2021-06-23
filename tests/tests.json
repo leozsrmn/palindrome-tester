@@ -58,5 +58,35 @@
     "name": "Negative number",
     "arg": "-n -13",
     "ans": "invalid argument\n"
+  },
+  "test-13": {
+    "name": "No arg",
+    "arg": "",
+    "ans": "invalid argument\n"
+  },
+  "test-14": {
+    "name": "Option with no arg",
+    "arg": "-n 363 -imin 0 -imax",
+    "ans": "invalid argument\n"
+  },
+  "test-15": {
+    "name": "Option with no arg 2",
+    "arg": "-n",
+    "ans": "invalid argument\n"
+  },
+  "test-16": {
+    "name": "Overflow arg",
+    "arg": "-n 21474836489",
+    "ans": "invalid argument\n"
+  },
+  "test-17": {
+    "name": "Overflow arg 2",
+    "arg": "-n 2148083647",
+    "ans": "invalid argument\n"
+  },
+  "test-18": {
+    "name": "pre-Overflow arg int max",
+    "arg": "-n 2147483647",
+    "ans": "no solution\n"
   }
 }

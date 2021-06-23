@@ -80,6 +80,7 @@ def square_root(nb):
     if nb == 0:
         return 0
     if nb > 2147483647 or nb < -2147483646:
+        print("[!] number > int max")
         return 0
     if not perfectsquare(nb):
         return -1

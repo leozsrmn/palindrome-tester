@@ -5,17 +5,24 @@ import colorama
 
 
 def exec_test(name, args, ans, testid):
-    tests_data = subprocess.run(["./palindrome_tmp"] + args.split(' '), capture_output=True, encoding='ascii')
+    utf8stdout = open(1, 'w', encoding='utf-8', closefd=False)  # fd 1 is stdout
+    if len(args) > 0:
+        cmd = ["./palindrome_tmp"] + args.split(' ')
+    else:
+        cmd = ["./palindrome_tmp"]
+    tests_data = subprocess.run(cmd, capture_output=True, encoding='ascii')
     print(f"{colorama.Style.BRIGHT}{colorama.Fore.LIGHTBLUE_EX}---" + name + f"---{colorama.Style.RESET_ALL}")
-    print("args: " + args)
+    print("args: \"" + args + "\" (args count: " + str(len(args.split(' '))) + ").")
     if tests_data.stdout == ans:
         print(f"{colorama.Fore.GREEN}Passed.{colorama.Style.RESET_ALL}")
     else:
         print(f"{colorama.Fore.RED}Failed.{colorama.Style.RESET_ALL}")
         print(f"\n{colorama.Fore.YELLOW}Get:")
-        print(tests_data.stdout)
+        print(tests_data.stdout.encode('utf-8'))
         print(f"{colorama.Fore.CYAN}Expected:{colorama.Style.RESET_ALL}")
-        print(f"{colorama.Fore.GREEN}" +ans)
+        print(f"{colorama.Fore.GREEN}")
+        print(str(ans).encode('utf-8'))
+        print(f"{colorama.Style.RESET_ALL}")
     print("")
 
 

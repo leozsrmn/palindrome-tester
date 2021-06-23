@@ -1,5 +1,4 @@
 #!/bin/bash
-pip install colorama
 echo -e "Requirement tests:\n"
 cc -fPIC -shared -o requirement.so ../requirement.c
 python3 requirement_tester.py rq_tests.json

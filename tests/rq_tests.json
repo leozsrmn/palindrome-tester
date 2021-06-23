@@ -12,7 +12,12 @@
   "test-3": {
     "ft": "squareroot",
     "name": "Big value",
-    "numbers": [2147483647, -2147483646 , 2147483640, 2156859364]
+    "numbers": [2147483647, -2147483646 , 2147483640]
+  },
+  "test-fail": {
+    "ft": "squareroot",
+    "name": "Zero",
+    "numbers": [0, 1]
   },
   "test-4": {
     "ft": "squareroot",
@@ -32,6 +37,6 @@
   "factorial-3": {
     "ft": "factorial",
     "name": "Big value",
-    "numbers": [2147483647, -2147483646 , 2147483640, 2156859364]
+    "numbers": [2147483647, -2147483646 , 2147483640]
   }
 }
