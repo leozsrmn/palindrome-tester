@@ -3,7 +3,25 @@ import sys
 import colorama
 import json
 import math
+import multiprocessing.pool
+import functools
 
+
+## SRC : https://stackoverflow.com/questions/492519/timeout-on-a-function-call
+## timeout bf tests
+def timeout(max_timeout):
+    """Timeout decorator, parameter in seconds."""
+    def timeout_decorator(item):
+        """Wrap the original function."""
+        @functools.wraps(item)
+        def func_wrapper(*args, **kwargs):
+            """Closure for function."""
+            pool = multiprocessing.pool.ThreadPool(processes=1)
+            async_result = pool.apply_async(item, args, kwargs)
+            # raises a TimeoutError if execution exceeds max_timeout
+            return async_result.get(max_timeout)
+        return func_wrapper
+    return timeout_decorator
 
 ## SRC : https://stackoverflow.com/questions/2489435/check-if-a-number-is-a-perfect-square
 ## perfectsqure func are not my code
@@ -74,6 +92,7 @@ def get_function(path):
     return my_function
 
 
+@timeout(2.5)
 def square_root(nb):
     if nb < 0:
         return -1
@@ -87,6 +106,7 @@ def square_root(nb):
     return math.sqrt(nb)
 
 
+@timeout(2.5)
 def ft_squareroot(requirement, testid, numbers):
     test_failed = 0
     test_passed = 0
@@ -103,12 +123,14 @@ def ft_squareroot(requirement, testid, numbers):
         print(f"{colorama.Fore.GREEN}Passed (" + str(test_passed) + f" tests).{colorama.Style.RESET_ALL}")
 
 
+@timeout(2.5)
 def factorial(nb):
     if nb >= 13 or nb < 0:
         return 0
     return math.factorial(nb)
 
 
+@timeout(2.5)
 def ft_factorial(requirement, testid, numbers):
     test_failed = 0
     test_passed = 0

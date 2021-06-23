@@ -2,8 +2,24 @@ import sys
 import subprocess
 import json
 import colorama
+import multiprocessing.pool
+import functools
 
 
+## SRC : https://stackoverflow.com/questions/492519/timeout-on-a-function-call
+## timeout bf tests
+def timeout(max_timeout):
+    def timeout_decorator(item):
+        @functools.wraps(item)
+        def func_wrapper(*args, **kwargs):
+            pool = multiprocessing.pool.ThreadPool(processes=1)
+            async_result = pool.apply_async(item, args, kwargs)
+            return async_result.get(max_timeout)
+        return func_wrapper
+    return timeout_decorator
+
+
+@timeout(3)
 def exec_test(name, args, ans, testid):
     utf8stdout = open(1, 'w', encoding='utf-8', closefd=False)  # fd 1 is stdout
     if len(args) > 0:

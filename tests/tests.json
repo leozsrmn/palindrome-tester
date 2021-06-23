@@ -88,5 +88,10 @@
     "name": "pre-Overflow arg int max",
     "arg": "-n 2147483647",
     "ans": "no solution\n"
+  },
+  "test-19": {
+    "name": "imax > imin",
+    "arg": "-n 121 -imax 10 -imin 12",
+    "ans": "invalid argument\n"
   }
 }
